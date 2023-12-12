@@ -41,7 +41,7 @@ class ResidualMaskedConv2d(nn.Module):
 		self.net = nn.Sequential(
 			MaskedConv2d('B', input_dim, input_dim // 2, kernel_size=1, padding=0),
 			nn.ReLU(),
-			MaskedConv2d('B', input_dim // 2, input_dim // 2, kernel_size=3, padding=3),
+			MaskedConv2d('B', input_dim // 2, input_dim // 2, kernel_size=3, padding=1),
 			nn.ReLU(),
 			MaskedConv2d('B', input_dim // 2, input_dim, kernel_size=1, padding=0)
 		)
