@@ -67,6 +67,6 @@ def plot_samples(model, n_samples):
 
 def experiment(model, epochs, train_loader, test_loader):
 	model = model.to(device)
-	optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+	optimizer = torch.optim.RMSprop(model.parameters(), lr=lr)
 	train_losses, test_losses = train(model, train_loader, test_loader, epochs, optimizer)
 	return train_losses, test_losses
